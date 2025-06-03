@@ -1,0 +1,72 @@
+.side3{
+    background-image: url("Bilder/background_exhi.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    place-content: center;
+    padding-bottom: 50px;
+    height: 100vh;
+  }
+  
+  .gallery3 { 
+    --s: 150px; /* control the size */
+    --g: 15px;  /* control the gap */
+    --f: 1.5;   /* control the scale factor */
+    
+    display: grid;
+    gap: var(--g);
+    width: calc(3*var(--s) + 2*var(--g));
+    aspect-ratio: 1;
+    grid-template-columns: repeat(5,auto);
+    height: auto;
+    width: 1800px;
+  }
+  
+  .gallery3 > img {
+    width: 0;
+    height: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    filter: grayscale(80);
+    transition: .35s linear;    
+}
+  
+  .gallery3 img:hover{
+    filter: grayscale(0);
+    width:  calc(var(--s)*var(--f));
+    height: calc(var(--s)*var(--f));
+  }
+  
+  @media only screen and (max-width: 1054px) {
+    .side3 {
+      height: 100%;
+      display: flex;
+      place-content: center;
+      padding-top: 20px;
+      background-size: 100% 100%;
+    }
+    .gallery3 { 
+        height: 960px;
+        width: 900px;
+        grid-template-columns: repeat(4,auto);
+      }
+
+}
+
+@media only screen and (max-width: 393px) {
+  .side3 {
+    height: 100%;
+    display: flex;
+    place-content: center;
+    padding-top: 20px;
+    background-size: 100% 100%;
+  }
+  .gallery3 { 
+      height: 735px;
+      width: 600px;
+      grid-template-columns: repeat(2,auto);
+    }
+
+}
